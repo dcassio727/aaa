@@ -1,0 +1,513 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cardápio</title>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="cardapio.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="topo">
+
+            <div class="logo">
+                Car<span>dápio</span>
+                
+            </div>
+ 
+            <button class="carrinho-topo" onclick="abrirCarrinho()">
+                🛒 Carrinho (<span id="quantidadeTopo">0</span>)
+            </button>
+
+        </div>
+    </header>
+
+
+    <section class="restaurante">
+
+        <h1>Frango Eustáquio</h1>
+
+        <div class="informacoes">
+            Assados · 30-45 min · consultar frete no WhatsApp
+        </div>
+
+    </section>
+
+
+    <div class="pesquisa">
+
+        <input
+            type="text"
+            id="pesquisa"
+            placeholder="🔎 Buscar no cardápio..."
+            oninput="pesquisarProdutos()"
+        >
+
+    </div>
+
+
+    <div class="categorias">
+
+        <button class="categoria ativa"
+            onclick="filtrarCategoria('todos', this)">
+            Todos
+        </button>
+
+        <button class="categoria"
+            onclick="filtrarCategoria('combos', this)">
+             Combos
+        </button>
+
+        <button class="categoria"
+            onclick="filtrarCategoria('assados', this)">
+             assados
+        </button>
+        
+        <button class="categoria"
+            onclick="filtrarCategoria('marmitas', this)">
+             Marmitas
+        </button>
+
+        <button class="categoria"
+            onclick="filtrarCategoria('massas', this)">
+             massas
+        </button>
+
+        <button class="categoria"
+            onclick="filtrarCategoria('bebidas', this)">
+             Bebidas
+        </button>
+
+        <button class="categoria"
+            onclick="filtrarCategoria('sobremesas', this)">
+             Sobremesas
+        </button>
+
+    </div>
+
+
+    <main>
+
+        <!-- HAMBÚRGUERES -->
+
+        <h2 class="titulo-categoria">
+             Combos
+        </h2>
+
+        <div class="produtos">
+
+            <div class="produto" data-categoria="combos">
+
+                <div class="produto-info">
+
+                    <h3>Combo tradicional</h3>
+
+                    <p>
+                       1 frango tradicional, 1 salada maionese e 1 refrigerante 2L
+                    </p>
+
+                    <div class="preco">
+                        R$ 80,00
+                    </div>
+
+                    <button
+                        class="botao-adicionar"
+                        onclick="adicionarCarrinho('Combo tradicional', 80.00)">
+                        + Adicionar
+                    </button>
+
+                </div>
+
+               <img src="img/ct.png" alt="tradicional">
+
+            </div>
+
+
+            <div class="produto" data-categoria="combos">
+
+                <div class="produto-info">
+
+                    <h3>Combo recheado</h3>
+
+                    <p>
+                        1 Frango recheado, 1 salada de maionese e 1 refrigerante 2L
+                    </p>
+
+                    <div class="preco">
+                        R$ 90,00
+                    </div>
+
+                    <button
+                        class="botao-adicionar"
+                        onclick="adicionarCarrinho('Combo recheado', 90.00)">
+                        + Adicionar
+                    </button>
+
+                </div>
+
+               <img src="img/cr.png" alt="recheado">
+
+            </div>
+
+        </div>
+
+
+        <!-- PORÇÕES -->
+
+        <h2 class="titulo-categoria">
+             Assados
+        </h2>
+
+        <div class="produtos">
+
+            <div class="produto" data-categoria="assados">
+
+                <div class="produto-info">
+
+                    <h3>Frango tradicional</h3>
+
+                    <p>
+                        1 Frango feito na maquina
+                    </p>
+
+                    <div class="preco">
+                        R$ 50,00
+                    </div>
+
+                    <button
+                        class="botao-adicionar"
+                        onclick="adicionarCarrinho(' Frango tradicional', 50.00)">
+                        + Adicionar
+                    </button>
+
+                </div>
+
+                <img src="img/maqui.jpeg" alt="tradicional">
+
+            </div>
+
+
+            <div class="produto" data-categoria="assados">
+
+                <div class="produto-info">
+
+                    <h3>Frango recheado</h3>
+
+                    <p>
+                        Frango feito na churrasqueira, recheado com farofa, bacon e linguiça calabresa
+                    </p>
+
+                    <div class="preco">
+                        R$ 60,00
+                    </div>
+
+                    <button
+                        class="botao-adicionar"
+                        onclick="adicionarCarrinho('Frango recheado', 60.00)">
+                        + Adicionar
+                    </button>
+
+                </div>
+
+                <img src="img/frango.jpeg" alt="recheado">
+
+            </div>
+
+        </div>
+
+         <h2 class="titulo-categoria">
+             Marmitas
+        </h2>
+
+        <div class="produtos">
+
+            <div class="produto" data-categoria="marmitas">
+
+                <div class="produto-info">
+
+                    <h3>Baião de dois</h3>
+
+                    <p>
+                      1 marmita de 500 gramas com baião de dois
+                    </p>
+
+                    <div class="preco">
+                        R$ 25,00
+                    </div>
+
+                    <button
+                        class="botao-adicionar"
+                        onclick="adicionarCarrinho('Baião de dois', 25.00)">
+                        + Adicionar
+                    </button>
+
+                </div>
+
+              <img src="img/baiao.jpg" alt="Refrigerante">
+
+            </div>
+
+
+            <div class="produto" data-categoria="marmitas">
+
+                <div class="produto-info">
+
+                    <h3>Feijão tropeiro </h3>
+
+                    <p>
+                        1 marmita de 500 gramas com Feijão tropeiro
+                    </p>
+
+                    <div class="preco">
+                        R$ 25,00
+                    </div>
+
+                    <button
+                        class="botao-adicionar"
+                        onclick="adicionarCarrinho('Feijão tropeiro ', 25.00)">
+                        + Adicionar
+                    </button>
+
+                </div>
+            <img src="img/feijao.jfif" alt="Refrigerante">
+
+            </div>
+
+        </div>
+
+         <h2 class="titulo-categoria">
+             Massas
+        </h2>
+
+        <div class="produtos">
+
+            <div class="produto" data-categoria="massas">
+
+                <div class="produto-info">
+
+                    <h3>nhoque tradicional</h3>
+
+                    <p>
+                      Nhoque ao molho de tomate 
+                    </p>
+
+                    <div class="preco">
+                        R$ 25,00
+                    </div>
+
+                    <button
+                        class="botao-adicionar"
+                        onclick="adicionarCarrinho('Nhoque tradicional', 25.00)">
+                        + Adicionar
+                    </button>
+
+                </div>
+
+                <img src="img/nho.jfif" alt="Refrigerante">
+
+            </div>
+
+
+            <div class="produto" data-categoria="massas">
+
+                <div class="produto-info">
+
+                    <h3>Lasanha </h3>
+
+                    <p>
+                        Lasanha a bolonhesa
+                    </p>
+
+                    <div class="preco">
+                        R$ 30,00
+                    </div>
+
+                    <button
+                        class="botao-adicionar"
+                        onclick="adicionarCarrinho('Lasanha ', 30.00)">
+                        + Adicionar
+                    </button>
+
+                </div>
+
+               <img src="img/las.jfif" alt="Refrigerante">
+
+            </div>
+
+        </div>
+
+        <!-- BEBIDAS -->
+
+        <h2 class="titulo-categoria">
+             Bebidas
+        </h2>
+
+        <div class="produtos">
+
+            <div class="produto" data-categoria="bebidas">
+
+                <div class="produto-info">
+
+                    <h3>Coca-Cola 2L</h3>
+
+                    <p>
+                        Refrigerante 2L.
+                    </p>
+
+                    <div class="preco">
+                        R$ 13,00
+                    </div>
+
+                    <button
+                        class="botao-adicionar"
+                        onclick="adicionarCarrinho('Coca-Cola', 13.00)">
+                        + Adicionar
+                    </button>
+
+                </div>
+
+               <img src="img/coca.jfif" alt="Refrigerante">
+
+            </div>
+
+
+            <div class="produto" data-categoria="bebidas">
+
+                <div class="produto-info">
+
+                    <h3>Fanta Laranja 2L</h3>
+
+                    <p>
+                        Refrigerante 2L.
+                    </p>
+
+                    <div class="preco">
+                        R$ 13,00
+                    </div>
+
+                    <button
+                        class="botao-adicionar"
+                        onclick="adicionarCarrinho('Fanta Laranja', 13.00)">
+                        + Adicionar
+                    </button>
+
+                </div>
+
+                <img src="img/fanta.jpg" alt="Refrigerante">
+
+            </div>
+
+        </div>
+
+
+        <!-- SOBREMESAS -->
+
+        <h2 class="titulo-categoria">
+             Sobremesas
+        </h2>
+
+        <div class="produtos">
+
+            <div class="produto" data-categoria="sobremesas">
+
+                <div class="produto-info">
+
+                    <h3>Pudim</h3>
+
+                    <p>
+                        Pudim com calda.
+                    </p>
+
+                    <div class="preco">
+                        R$ 60,00
+                    </div>
+
+                    <button
+                        class="botao-adicionar"
+                        onclick="adicionarCarrinho('Pudim', 60.00)">
+                        + Adicionar
+                    </button>
+
+                </div>
+
+               <img src="img/pud.jfif" alt="pudim">
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- FUNDO DO CARRINHO -->
+
+    <div
+        class="fundo-carrinho"
+        id="fundoCarrinho"
+        onclick="fecharCarrinho()">
+    </div>
+
+
+    <!-- CARRINHO -->
+
+    <aside class="carrinho" id="carrinho">
+
+        <div class="carrinho-header">
+
+            <h2>🛒 Seu carrinho</h2>
+
+            <button
+                class="fechar"
+                onclick="fecharCarrinho()">
+                ×
+            </button>
+
+        </div>
+
+
+        <div
+            class="itens-carrinho"
+            id="itensCarrinho">
+
+            <div class="carrinho-vazio">
+                Seu carrinho está vazio.
+                <br><br>
+                Adicione algum produto! 
+            </div>
+
+        </div>
+
+
+        <div class="carrinho-footer">
+
+            <div class="linha-total">
+
+                <span>Total</span>
+
+                <span>
+                    R$ <span id="total">0,00</span>
+                </span>
+
+            </div>
+
+            <button
+                class="finalizar"
+                onclick="finalizarPedido()">
+                Finalizar pedido
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+
